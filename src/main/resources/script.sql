@@ -5,7 +5,8 @@ create database web_trevel;
 use web_travel;
 
 create table if not exists user(
-   user_name varchar(25) not null primary key,
+    user_id int primary key not null,
+    user_name varchar(25) not null ,
     user_last_name varchar(25) not null,
     user_email varchar(30) not null,
     user_phone_number int(15) not null);
