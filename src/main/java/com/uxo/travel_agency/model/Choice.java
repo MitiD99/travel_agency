@@ -16,8 +16,9 @@ public class Choice {
     @JoinColumn(name = "USER_NAME")
     private User user;
 
-    @OneToMany(mappedBy = "Choice", cascade = CascadeType.ALL)
-    private List<Tour> userChoiceTourList;
+
+    @OneToMany(mappedBy = "tour", fetch = FetchType.LAZY)
+    private List<Tour> choiceTourList;
 
 
 
@@ -37,12 +38,12 @@ public class Choice {
         this.choiceId = choiceId;
     }
 
-    public List<Tour> getUserChoiceTourList() {
-        return userChoiceTourList;
+    public List<Tour> getChoiceTourList() {
+        return choiceTourList;
     }
 
-    public void setUserChoiceTourList(List<Tour> userChoiceTourList) {
-        this.userChoiceTourList = userChoiceTourList;
+    public void setChoiceTourList(List<Tour> choiceTourList) {
+        choiceTourList = choiceTourList;
     }
 
     public Choice() {
