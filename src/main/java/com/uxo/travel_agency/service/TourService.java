@@ -8,5 +8,5 @@ public interface TourService {
     Tour findById(int id);
 
 
-    void deleteAll(Tour tourDelete);
+    void delete(Tour tourDelete);
 }

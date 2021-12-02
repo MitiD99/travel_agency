@@ -1,6 +1,7 @@
 package com.uxo.travel_agency.service.lmpl;
 
 import com.uxo.travel_agency.model.Tour;
+import com.uxo.travel_agency.repositotory.TourRepository;
 import com.uxo.travel_agency.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,19 +10,19 @@ import org.springframework.stereotype.Service;
 public class TourServiceImpl implements TourService {
 
     @Autowired
-    private TourService tourService;
+    private TourRepository tourRepository;
 
     @Override
     public void create(Tour tour) {
-        tourService.create(tour);
+        tourRepository.save(tour);
     }
 
     @Override
     public Tour findById(int id) {
-        return tourService.findById(id);
+        return tourRepository.findById(id).orElseThrow();
     }
 
 
     @Override
-    public void deleteAll(Tour tourDelete){tourService.deleteAll(tourDelete);};
+    public void delete(Tour tourDelete){tourRepository.delete(tourDelete);};
 }

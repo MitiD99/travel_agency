@@ -1,7 +1,6 @@
 package com.uxo.travel_agency.controller;
 
 import com.uxo.travel_agency.model.Tour;
-import com.uxo.travel_agency.model.User;
 import com.uxo.travel_agency.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

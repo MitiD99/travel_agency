@@ -30,7 +30,7 @@ public class Tour {
     private double price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_tour")
+    @JoinColumn(name = "CHOICE")
     private Choice choice;
 
     public int getId() {

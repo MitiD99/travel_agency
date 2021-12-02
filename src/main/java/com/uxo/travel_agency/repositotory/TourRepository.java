@@ -6,7 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TourRepository extends JpaRepository<Tour, Integer> {
-    void crete(int id);
-    void deleteAll(int id);
-    Tour findById(int id);
+
 }

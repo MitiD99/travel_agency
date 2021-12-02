@@ -23,13 +23,22 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    public User read(int id){return userRepository.read(id);}
-
-    public User delete(int id){
-        return userRepository.delete(id);
+    public User read(int id) {
+        return userRepository.findById(id).orElseThrow();
     }
 
-    public User update(int id){
-        return userRepository.update(id);
+    public void delete(int id) {
+        User userToDelete = userRepository.getById(id);
+        userRepository.delete(userToDelete);
+    }
+
+    public User update(User user) {
+        User userToUpdate = userRepository.getById(user.getId());
+        userToUpdate.setRoleList(user.getRoleList());
+        userToUpdate.setUser_last_name(user.getUser_last_name());
+        userToUpdate.setUser_name(user.getUser_name());
+        userToUpdate.setUserEmail(user.getUserEmail());
+        userToUpdate.setUserPhoneNumber(user.getUserPhoneNumber());
+        return userRepository.save(userToUpdate);
     }
 }

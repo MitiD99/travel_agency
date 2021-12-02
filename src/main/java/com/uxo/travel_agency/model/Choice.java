@@ -17,7 +17,7 @@ public class Choice {
     private User user;
 
 
-    @OneToMany(mappedBy = "tour", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "choice", fetch = FetchType.LAZY)
     private List<Tour> choiceTourList;
 
 

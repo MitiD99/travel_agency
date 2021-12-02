@@ -7,20 +7,32 @@ import javax.persistence.*;
 public class Role {
 
     @Id
-    @Column(name = "ROLE")
-    private String role;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ROLE_ID")
+    private int id;
 
-    @ManyToOne
+    @Column(name = "ROLE_NAME")
+    private String roleName;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_NAME")
     private User user;
 
 
-    public String getRole() {
-        return role;
+    public int getId() {
+        return id;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public User getUser() {

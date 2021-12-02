@@ -28,7 +28,7 @@ public class User {
     @Column(name = "USER_PHONE_NUMBER")
     private int userPhoneNumber;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Role> roleList;
 
     public String getUser_name() {
